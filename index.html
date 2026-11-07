@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marrow Supply — small-batch goods for the table</title>
+<meta name="description" content="A sample e-commerce storefront: catalogue, variants, ratings and a working cart drawer. Fictional shop, built as a portfolio template by JayOd Studios.">
+<meta name="theme-color" content="#f7f2e8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23a8502f'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='18' text-anchor='middle' fill='%23f7f2e8'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<p class="announce">
+  <span>Winter drop — 20% off until Sunday</span>
+  <span class="announce-code">Code: MARROW20</span>
+</p>
+
+<header class="site-head">
+  <div class="head-row">
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteNav">
+      <span class="bars" aria-hidden="true"></span><span class="sr">Open menu</span>
+    </button>
+
+    <a class="wordmark" href="#main">Marrow</a>
+
+    <nav id="siteNav" aria-label="Shop">
+      <a href="#shop">Shop</a>
+      <a href="#workshop">Workshop</a>
+      <a href="#journal">Journal</a>
+      <a href="#stockists">Stockists</a>
+    </nav>
+
+    <div class="head-tools">
+      <label class="search">
+        <span class="sr">Search the shop</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.2"/><path d="m13 13 4 4"/></svg>
+        <input type="search" id="q" placeholder="Search" autocomplete="off">
+      </label>
+      <button class="cart-btn" id="cartBtn" type="button" aria-expanded="false" aria-controls="cart">
+        <span class="sr">Open bag</span>
+        <svg viewBox="0 0 22 22" aria-hidden="true"><path d="M4 7h14l-1.2 12H5.2zM8 7V5.4a3 3 0 0 1 6 0V7"/></svg>
+        <span class="count" id="cartCount" aria-live="polite" aria-atomic="true">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-copy">
+      <p class="eyebrow">Small-batch goods · Somerset</p>
+      <h1 id="heroTitle">For the everyday<br><em>table.</em></h1>
+      <p class="hero-lede">Trays, throws and glassware made in short runs by six workshops we can name. Nothing here is designed to be replaced next season.</p>
+      <div class="hero-actions">
+        <a class="solid" href="#shop">Shop the collection</a>
+        <a class="ghost-link" href="#workshop">Inside the workshop <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="hero-notes" role="list">
+        <li>Free shipping over $60</li>
+        <li>30-day returns</li>
+        <li>Repairs, not replacements</li>
+      </ul>
+    </div>
+
+    <figure class="hero-art">
+      <div class="hero-plate" role="img" aria-label="A drawn still life: a stone carafe and two cups on a warm linen cloth."></div>
+      <figcaption>Winter collection, photographed at the workshop in Bruton.</figcaption>
+    </figure>
+  </section>
+
+  <section class="shop" id="shop" aria-labelledby="shopTitle">
+    <div class="shop-head">
+      <div>
+        <p class="eyebrow">The collection</p>
+        <h2 id="shopTitle">Six pieces, made to be used</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by material">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-filter="table" aria-pressed="false">Table</button>
+        <button type="button" class="chip" data-filter="textiles" aria-pressed="false">Textiles</button>
+        <button type="button" class="chip" data-filter="glass" aria-pressed="false">Glass</button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid">
+      <article class="product" data-cat="table" data-name="cedar tray">
+        <div class="product-art art-a"><span class="badge">Sale</span></div>
+        <div class="product-info">
+          <h3>Cedar Tray</h3>
+          <p class="price">$48 <s>$60</s></p>
+          <p class="rating"><span aria-hidden="true">★★★★☆</span><span class="sr">Rated 4.5 out of 5</span></p>
+          <button class="add" type="button" data-id="cedar-tray" data-name="Cedar Tray" data-price="48">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="product" data-cat="textiles" data-name="linen throw">
+        <div class="product-art art-b"><span class="badge new">New</span></div>
+        <div class="product-info">
+          <h3>Linen Throw</h3>
+          <p class="price">$129</p>
+          <p class="rating"><span aria-hidden="true">★★★★★</span><span class="sr">Rated 5 out of 5</span></p>
+          <button class="add" type="button" data-id="linen-throw" data-name="Linen Throw" data-price="129">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="product" data-cat="glass" data-name="stone carafe">
+        <div class="product-art art-c"><span class="badge">Sale</span></div>
+        <div class="product-info">
+          <h3>Stone Carafe</h3>
+          <p class="price">$36 <s>$45</s></p>
+          <p class="rating"><span aria-hidden="true">★★★★☆</span><span class="sr">Rated 4 out of 5</span></p>
+          <button class="add" type="button" data-id="stone-carafe" data-name="Stone Carafe" data-price="36">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="product" data-cat="table" data-name="oak serving board">
+        <div class="product-art art-a"><span class="badge new">New</span></div>
+        <div class="product-info">
+          <h3>Oak Serving Board</h3>
+          <p class="price">$64</p>
+          <p class="rating"><span aria-hidden="true">★★★★★</span><span class="sr">Rated 5 out of 5</span></p>
+          <button class="add" type="button" data-id="oak-board" data-name="Oak Serving Board" data-price="64">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="product" data-cat="textiles" data-name="wool cushion">
+        <div class="product-art art-b"><span class="badge">Sale</span></div>
+        <div class="product-info">
+          <h3>Wool Cushion</h3>
+          <p class="price">$58 <s>$72</s></p>
+          <p class="rating"><span aria-hidden="true">★★★★☆</span><span class="sr">Rated 4.5 out of 5</span></p>
+          <button class="add" type="button" data-id="wool-cushion" data-name="Wool Cushion" data-price="58">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="product" data-cat="glass" data-name="smoked tumblers">
+        <div class="product-art art-c"></div>
+        <div class="product-info">
+          <h3>Smoked Tumblers <span class="muted small">set of two</span></h3>
+          <p class="price">$44</p>
+          <p class="rating"><span aria-hidden="true">★★★★☆</span><span class="sr">Rated 4 out of 5</span></p>
+          <button class="add" type="button" data-id="smoked-tumblers" data-name="Smoked Tumblers" data-price="44">Add to bag</button>
+        </div>
+      </article>
+    </div>
+
+    <p class="empty" id="shopEmpty" hidden>Nothing matches that. <button class="link-btn" type="button" id="resetShop">Show everything</button></p>
+  </section>
+
+  <section class="workshop" id="workshop" aria-labelledby="workshopTitle">
+    <div class="workshop-art" role="img" aria-label="A drawn workshop bench: morning light across two boards and a hand plane."></div>
+    <div class="workshop-copy">
+      <p class="eyebrow">The workshop</p>
+      <h2 id="workshopTitle">Six makers. One town.</h2>
+      <p>We started in 2018 with a market stall and a borrowed kiln. Everything still comes from workshops within twenty miles of Bruton — which is why the collection changes slowly and why we can tell you who made your tray.</p>
+      <dl class="facts">
+        <div><dt>Made by</dt><dd>6 workshops</dd></div>
+        <div><dt>Materials</dt><dd>FSC oak, European linen, recycled glass</dd></div>
+        <div><dt>Packaging</dt><dd>Paper only, no plastic</dd></div>
+        <div><dt>Repairs</dt><dd>Free, for life</dd></div>
+      </dl>
+      <a class="ghost-link" href="#journal">Read the making notes <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="quotes" aria-label="Customer reviews">
+    <figure>
+      <blockquote>“Four years of daily use and the tray has one mark. I like the mark.”</blockquote>
+      <figcaption>Ada R. — verified buyer, Cedar Tray</figcaption>
+    </figure>
+    <figure>
+      <blockquote>“The only throw in the house the dog has not managed to destroy.”</blockquote>
+      <figcaption>Tom H. — verified buyer, Linen Throw</figcaption>
+    </figure>
+    <figure>
+      <blockquote>“Arrived in paper, wrapped by hand, with the maker's initials on the card.”</blockquote>
+      <figcaption>Priya N. — verified buyer, Stone Carafe</figcaption>
+    </figure>
+  </section>
+
+  <section class="journal" id="journal" aria-labelledby="journalTitle">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Journal</p>
+        <h2 id="journalTitle">Notes from the bench</h2>
+      </div>
+      <a class="ghost-link" href="#journal">All notes <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="journal-grid">
+      <article>
+        <p class="meta">Making · 4 min</p>
+        <h3>Why we finish with oil, not lacquer</h3>
+        <p class="muted">A finish should be repairable in a kitchen, not a factory.</p>
+      </article>
+      <article>
+        <p class="meta">Materials · 6 min</p>
+        <h3>The linen that gets softer</h3>
+        <p class="muted">Six washes in, and the throw finally behaves the way it should.</p>
+      </article>
+      <article>
+        <p class="meta">Workshop · 3 min</p>
+        <h3>A day with the glass blower</h3>
+        <p class="muted">Starting at 5am, and why every carafe is slightly different.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="signup" id="stockists" aria-labelledby="signupTitle">
+    <div>
+      <p class="eyebrow">Stockists &amp; letters</p>
+      <h2 id="signupTitle">Find us, or hear from us</h2>
+      <p class="muted">Twelve shops in the UK and three in Europe. Or one short letter each month — new pieces, workshop notes, nothing else.</p>
+    </div>
+    <form id="signupForm" novalidate>
+      <label for="email">Email address</label>
+      <div class="field">
+        <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="emailError">
+        <button class="solid" type="submit">Join</button>
+      </div>
+      <p class="error" id="emailError" role="alert"></p>
+      <p class="fine">Sample form — nothing is sent or stored.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <p class="wordmark small-mark">Marrow</p>
+    <p class="muted small">Small-batch goods for the everyday table.<br>Unit 4, Bruton Yard, Somerset.</p>
+  </div>
+  <nav aria-label="Footer">
+    <a href="#shop">Shop</a>
+    <a href="#workshop">Workshop</a>
+    <a href="#journal">Journal</a>
+    <a href="#stockists">Stockists</a>
+    <a href="#stockists">Shipping &amp; returns</a>
+  </nav>
+  <p class="muted small">Sample project — Marrow Supply is fictional. A portfolio template by JayOd Studios.</p>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+  <header class="drawer-head">
+    <h2 id="cartTitle">Your bag</h2>
+    <button class="close" id="closeCart" type="button"><span aria-hidden="true">×</span><span class="sr">Close bag</span></button>
+  </header>
+
+  <div class="drawer-body">
+    <p class="cart-empty" id="cartEmpty">Your bag is empty. <a class="ghost-link" href="#shop" id="shopLink">Shop the collection</a></p>
+    <ul class="cart-list" id="cartItems" role="list"></ul>
+    <p class="ship-note" id="shipNote" hidden></p>
+  </div>
+
+  <footer class="drawer-foot">
+    <p class="total-row"><span>Subtotal</span> <strong id="cartTotal">$0</strong></p>
+    <p class="fine">Shipping and taxes calculated at checkout. Free shipping over $60.</p>
+    <button class="solid wide" type="button" id="checkout">Checkout</button>
+    <p class="fine center">Sample store — no payment is taken.</p>
+  </footer>
+</aside>
+
+<p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+<script src="main.js"></script>
+</body>
+</html>

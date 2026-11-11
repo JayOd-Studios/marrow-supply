@@ -269,6 +269,13 @@
       menuBtn.setAttribute("aria-expanded", "false");
       menuBtn.querySelector(".sr").textContent = "Open menu";
     });
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape" || !nav.classList.contains("is-open")) return;
+      nav.classList.remove("is-open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.querySelector(".sr").textContent = "Open menu";
+      menuBtn.focus();
+    });
   }
 
   /* ---------- Signup ---------- */

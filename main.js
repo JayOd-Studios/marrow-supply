@@ -56,6 +56,14 @@
       var thumb = document.createElement("div");
       thumb.className = "cart-thumb";
       thumb.setAttribute("aria-hidden", "true");
+      if (item.image) {
+        var thumbImg = document.createElement("img");
+        thumbImg.src = item.image;
+        thumbImg.alt = "";
+        thumbImg.loading = "lazy";
+        thumbImg.decoding = "async";
+        thumb.append(thumbImg);
+      }
 
       var info = document.createElement("div");
       var name = document.createElement("h3");
@@ -126,6 +134,7 @@
         id: id,
         name: button.getAttribute("data-name"),
         price: Number(button.getAttribute("data-price")),
+        image: button.getAttribute("data-img"),
         qty: 1
       });
     }

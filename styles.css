@@ -272,31 +272,13 @@ main { overflow-x: clip; }
   aspect-ratio: 5 / 4;
   overflow: hidden;
   border-radius: 2px;
-  background:
-    radial-gradient(circle at 74% 20%, #fbf3e4 0 12%, transparent 12.6%),
-    linear-gradient(165deg, #e7dcc9 0 54%, #cdbca2 54% 55%, #b9a68b 55% 100%);
+  background: var(--paper-2);
 }
-.hero-plate::before {
-  content: "";
-  position: absolute;
-  left: 50%; bottom: 16%;
-  width: 30%; height: 52%;
-  transform: translateX(-50%);
-  border-radius: 42% 42% 26% 26% / 22% 22% 78% 78%;
-  background: linear-gradient(100deg, #8b9a8c, #5f7164 45%, #435449 100%);
-  box-shadow:
-    -78px 42px 0 -18px #7d8b7c,
-    74px 46px 0 -22px #8d9a89,
-    0 28px 34px rgba(52, 43, 30, 0.22);
-}
-.hero-plate::after {
-  content: "";
-  position: absolute;
-  left: 50%; bottom: 12%;
-  width: 46%; height: 8%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(56, 44, 30, 0.3), transparent 70%);
+.hero-plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hero-art figcaption {
   margin-top: 10px;
@@ -350,6 +332,14 @@ main { overflow-x: clip; }
   background: var(--paper-2);
   margin-bottom: 12px;
 }
+.product-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.product:hover .product-art img { transform: scale(1.025); }
 .badge {
   position: absolute; top: 10px; left: 10px;
   padding: 3px 9px;
@@ -361,80 +351,6 @@ main { overflow-x: clip; }
   text-transform: uppercase;
 }
 .badge.new { background: var(--moss); }
-
-/* Three drawn goods. Each is gradients, so the shop needs no photography. */
-.art-a {
-  background:
-    radial-gradient(circle at 30% 16%, #fbf5e9 0 22%, transparent 22.4%),
-    linear-gradient(160deg, #e8dfcd, #d8cbb4);
-}
-.art-a::before {
-  content: "";
-  position: absolute;
-  left: 50%; bottom: 17%;
-  width: 56%; height: 30%;
-  transform: translateX(-50%);
-  border-radius: 8px 8px 5px 5px;
-  background: linear-gradient(105deg, #a8704b, #8a5535 55%, #6f4126);
-  box-shadow: 0 16px 20px rgba(60, 43, 26, 0.22), inset 0 1px 0 rgba(255, 240, 218, 0.35);
-}
-.art-a::after {
-  content: "";
-  position: absolute;
-  left: 24%; right: 24%; bottom: 36%;
-  height: 3px;
-  border-radius: 3px;
-  background: rgba(255, 235, 205, 0.32);
-}
-
-.art-b {
-  background:
-    linear-gradient(120deg, transparent 45%, rgba(255, 255, 255, 0.35) 45.4% 46%, transparent 46.4%),
-    repeating-linear-gradient(96deg, #e5dbc7 0 3px, #ddd1ba 3px 6px);
-}
-.art-b::before {
-  content: "";
-  position: absolute;
-  left: 14%; right: 14%; top: 22%; bottom: 22%;
-  border-radius: 4px;
-  background:
-    repeating-linear-gradient(92deg, rgba(111, 86, 62, 0.14) 0 2px, transparent 2px 7px),
-    linear-gradient(155deg, #cdb99c, #b39f83 60%, #a08b70);
-  box-shadow: 0 18px 26px rgba(60, 46, 30, 0.2);
-}
-.art-b::after {
-  content: "";
-  position: absolute;
-  left: 14%; right: 14%; top: 47%;
-  height: 8%;
-  background: rgba(247, 242, 232, 0.18);
-  transform: skewY(-1.5deg);
-}
-
-.art-c {
-  background:
-    radial-gradient(circle at 70% 12%, #fdf8ee 0 18%, transparent 18.4%),
-    linear-gradient(170deg, #e2e3d6, #c7c9b8);
-}
-.art-c::before {
-  content: "";
-  position: absolute;
-  left: 26%; bottom: 20%;
-  width: 34%; height: 46%;
-  border-radius: 46% 46% 20% 20% / 18% 18% 82% 82%;
-  background: linear-gradient(100deg, rgba(86, 108, 94, 0.55), rgba(53, 72, 62, 0.78));
-  box-shadow:
-    42% 0 0 rgba(255, 255, 255, 0.2),
-    56px 26px 0 -22px rgba(66, 86, 74, 0.6);
-}
-.art-c::after {
-  content: "";
-  position: absolute;
-  left: 26%; bottom: 66%;
-  width: 7%; height: 10%;
-  border-radius: 3px 3px 0 0;
-  background: rgba(60, 80, 68, 0.72);
-}
 
 .product-info h3 {
   font-family: var(--display);
@@ -484,26 +400,15 @@ main { overflow-x: clip; }
 .workshop-art {
   aspect-ratio: 4 / 3;
   border-radius: 2px;
-  background:
-    linear-gradient(102deg, transparent 58%, rgba(255, 245, 225, 0.3) 58.4% 76%, transparent 76.4%),
-    linear-gradient(170deg, #ded2bd 0 62%, #c2b197 62% 100%);
+  background: var(--paper-2);
   position: relative;
   overflow: hidden;
 }
-.workshop-art::before {
-  content: "";
-  position: absolute;
-  left: 12%; right: 22%; top: 38%; height: 12%;
-  background: linear-gradient(90deg, #9b6c46, #7d5232);
-  border-radius: 3px;
-  box-shadow: 0 24px 26px rgba(58, 42, 26, 0.22);
-}
-.workshop-art::after {
-  content: "";
-  position: absolute;
-  right: 16%; top: 46%; width: 18%; height: 26%;
-  border-radius: 40% 40% 8px 8px;
-  background: linear-gradient(120deg, #59645a, #3e4a41);
+.workshop-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .workshop-copy h2 { margin-bottom: 12px; }
 .workshop-copy > p { font-size: 15.5px; color: #4a4237; max-width: 48ch; margin-bottom: 20px; }
@@ -674,7 +579,8 @@ main { overflow-x: clip; }
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
-.cart-thumb { width: 56px; height: 66px; border-radius: 2px; background: linear-gradient(160deg, #e5dac6, #cdbda3); }
+.cart-thumb { width: 56px; height: 66px; overflow: hidden; border-radius: 2px; background: var(--paper-2); }
+.cart-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .cart-item h3 { font-family: var(--display); font-size: 16px; font-weight: 500; line-height: 1.25; }
 .cart-item .unit { font: 500 12px/1.5 var(--mono); color: var(--muted); }
 .cart-item .line-total { font: 600 13px/1.4 var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
